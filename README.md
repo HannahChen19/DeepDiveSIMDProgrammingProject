@@ -33,7 +33,7 @@ Name: Chen, Hannah L. / G01
   
 **V. Screenshot of the program output including correctness check (CUDA)**
 
-  **a.) n = 2^20**__
+  **a.) n = 2^20**
   
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/b179103e-afd0-4c1b-8a7f-31c2adaef8ce)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/4b6e9e63-c818-42c0-82a6-70972d3d88ec)
@@ -41,7 +41,9 @@ Name: Chen, Hannah L. / G01
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/c04a4f71-562e-4f22-9949-dd1f2adc73ba)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/f4803bdc-28e7-4f3d-aa06-638260faaaf9)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/a5d6e0a3-f13f-4291-9181-8e1ab88d0ff5)
-  **b.) n = 2^24**__
+  **b.) n = 2^24**
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/01d3c929-0415-4c3a-a370-dc02f82ffe37)
   
-  **c.) n = 2^26 _**__(Up to 2^26 for it to be the same as the other kernels - for more accurate comparative analysis)_
+
+  **c.) n = 2^26 _**(Up to 2^26 for it to be the same as the other kernels - for more accurate comparative analysis)_
   
