@@ -43,10 +43,7 @@ Name: Chen, Hannah L. / G01
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/a5d6e0a3-f13f-4291-9181-8e1ab88d0ff5)
 
   b.) n = 2^24
-  
-
-  **b.) n = 2^24**
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/01d3c929-0415-4c3a-a370-dc02f82ffe37)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/ba7802d6-21b7-4358-b575-194ab18c8804)
   
 
   **c.) n = 2^26 _**(Up to 2^26 for it to be the same as the other kernels - for more accurate comparative analysis)_
