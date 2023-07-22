@@ -1,15 +1,8 @@
-/*CHEN, Hannah / G01*/
-//1e3 -> milliseconds
-//release version
+/***** CHEN, Hannah / G01 *****/
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
-/*************************************************************************/
-/*  x86 SIMD ISA (code in asmfunc1.asm file)   */
-/*************************************************************************/
-extern void SIMDdotProduct(int n, double* sdot, double* A, double* B);
 
 /*************************************************************************/
 /*  x86-64 (code in asmfunc2.asm file)    */
@@ -17,9 +10,16 @@ extern void SIMDdotProduct(int n, double* sdot, double* A, double* B);
 extern void x86dotProduct(int n, double* sdot, double* A, double* B);
 
 /*************************************************************************/
+/*  x86 SIMD ISA (code in asmfunc1.asm file)   */
+/*************************************************************************/
+extern void SIMDdotProduct(int n, double* sdot, double* A, double* B);
+
+/*************************************************************************/
 /*  C program codes     */
 /*************************************************************************/
-void dotProduct(int n, double* sdot, double* A, double* B) {
+double c_output = 0.0;
+
+void dotProduct(int n, double* sdot, double* A, double* B) {    //CHEN, HANNAH L. / G01
     *sdot = 0.0;
     for (int i = 0; i < n; i++) {
         *sdot += A[i] * B[i];
@@ -66,14 +66,15 @@ double bulkRunC(unsigned int vector_size) {
     }
 
     actual_sdot = *sdot;
+    c_output = *sdot;
 
-    printf("Expected sdot is: %.5lf\n", expected_sdot);
-    printf("Actual sdot is: %.5lf\n", actual_sdot);
+    printf("(C) Expected sdot is: %.5lf\n", expected_sdot);
+    printf("(C) Actual sdot is: %.5lf\n", actual_sdot);
     if (expected_sdot == actual_sdot) {
-        printf("Expected sdot and Actual sdot matched. Result is CORRECT!\n\n");
+        printf("(C) Expected sdot and Actual sdot matched. Result is CORRECT!\n\n");
     }
     else {
-        printf("Expected sdot and Actual sdot do not match. Result is WRONG!\n\n");
+        printf("(C) Expected sdot and Actual sdot do not match. Result is WRONG!\n\n");
     }
     /* End of C version */
 
@@ -129,12 +130,13 @@ double bulkRunx86(unsigned int vector_size) {
     actual_sdot = *sdot;
 
     printf("(x86-64) Expected sdot is: %.5lf\n", expected_sdot);
+    printf("C version output is: %.5lf\n", c_output);
     printf("(x86-64) Actual sdot is: %.5lf\n", actual_sdot);
-    if (expected_sdot == actual_sdot) {
-        printf("(x86-64) Expected sdot and Actual sdot matched. Result is CORRECT!\n\n");
+    if (c_output == actual_sdot) {
+        printf("(x86-64) Expected sdot, C version sdot, and Actual sdot matched. Result is CORRECT. x86-64 kernel output is CORRECT!\n\n");
     }
     else {
-        printf("(x86-64) Expected sdot and Actual sdot do not match. Result is WRONG!\n\n");
+        printf("(x86-64) Expected sdot, C version sdot, and Actual sdot do not match. Result is WRONG. x86-64 kernel output is WRONG!\n\n");
     }
     /* End of x86-64 version */
 
@@ -190,12 +192,13 @@ double bulkRunSIMDYMM(unsigned int vector_size) {
     actual_sdot = *sdot;
 
     printf("(x86_SIMD_ISA) Expected sdot is: %.5lf\n", expected_sdot);
+    printf("C version output is: %.5lf\n", c_output);
     printf("(x86_SIMD_ISA) Actual sdot is: %.5lf\n", actual_sdot);
-    if (expected_sdot == actual_sdot) {
-        printf("(x86_SIMD_ISA) Expected sdot and Actual sdot matched. Result is CORRECT!\n\n");
+    if (c_output == actual_sdot) {
+        printf("(x86_SIMD_ISA) Expected sdot, C version sdot, and Actual sdot matched. Result is CORRECT. SIMD YMM register kernel output is CORRECT!\n\n");
     }
     else {
-        printf("(x86_SIMD_ISA) Expected sdot and Actual sdot do not match. Result is WRONG!\n\n");
+        printf("(x86_SIMD_ISA) Expected sdot, C version sdot, and Actual sdot do not match. Result is WRONG. SIMD YMM register kernel output is WRONG!\n\n");
     }
     /* End of x86-64 SIMD YMM */
 
@@ -210,28 +213,30 @@ double bulkRunSIMDYMM(unsigned int vector_size) {
 /*  main function for calling the bulkRun functions of the C, x86-64, and x86 SIMD ISA kernels  */
 /************************************************************************************************/
 int main() {
+    /********* CHANGE NUMBER OF RUNS AND VECTOR SIZE HERE IF NEEDED ********/
     int numberOfRuns = 30;
+    unsigned int n = 1 << 20;
+    /***********************************************************************/
+
     double* timeResults = (double*)malloc(numberOfRuns * sizeof(double));
     double totalResult = 0;
-
-    unsigned int array_size = 1 << 26;
 
     /*************************************************************************/
     /* run C program */
     /*************************************************************************/
     for (int i = 0; i < numberOfRuns; i++) {
-        timeResults[i] = bulkRunC(array_size);
+        timeResults[i] = bulkRunC(n);
         totalResult += timeResults[i];
     }
 
     printf("\n\nC Program total number of runs: %d.\n", numberOfRuns);
     for (int i = 0; i < numberOfRuns; i++)
-        printf("Run number %d takes %f microseconds.\n", i + 1, timeResults[i]);
+        printf("(C) Run number %d takes %f microseconds.\n", i + 1, timeResults[i]);
 
     //get average time taken
     double aveResult = totalResult / numberOfRuns;
     printf("\nFor C Program, the average run time result of %d runs for an array size of %d is %f microseconds.\n\n\n",
-        numberOfRuns, array_size, aveResult);
+        numberOfRuns, n, aveResult);
 
     /*************************************************************************/
     /* call x86-64 program */
@@ -240,7 +245,7 @@ int main() {
     totalResult = 0;
 
     for (int i = 0; i < numberOfRuns; i++) {
-        timeResults[i] = bulkRunx86(array_size);
+        timeResults[i] = bulkRunx86(n);
         totalResult += timeResults[i];
     }
 
@@ -250,8 +255,8 @@ int main() {
 
     //get average time taken
     aveResult = totalResult / numberOfRuns;
-    printf("\nFor (x86-64) Program, the average run time result of %d runs for an array size of %d is %f microseconds.\n\n\n",
-        numberOfRuns, array_size, aveResult);
+    printf("\nFor x86-64 Program, the average run time result of %d runs for an array size of %d is %f microseconds.\n\n\n",
+        numberOfRuns, n, aveResult);
 
     /*************************************************************************/
     /*  call x86 SIMD ISA program   */
@@ -260,18 +265,18 @@ int main() {
     totalResult = 0;
 
     for (int i = 0; i < numberOfRuns; i++) {
-        timeResults[i] = bulkRunSIMDYMM(array_size);
+        timeResults[i] = bulkRunSIMDYMM(n);
         totalResult += timeResults[i];
     }
 
-    printf("\n\nx86_SIMD_ISA Program total number of runs: %d.\n", numberOfRuns);
+    printf("\n\n(x86_SIMD_ISA) Program total number of runs: %d.\n", numberOfRuns);
     for (int i = 0; i < numberOfRuns; i++)
-        printf("x86_SIMD_ISA Run number %d takes %f microseconds.\n", i + 1, timeResults[i]);
+        printf("(x86_SIMD_ISA) Run number %d takes %f microseconds.\n", i + 1, timeResults[i]);
 
     //get average time taken
     aveResult = totalResult / numberOfRuns;
     printf("\nFor x86_SIMD_ISA Program, the average run time result of %d runs for an array size of %d is %f microseconds.\n\n\n",
-        numberOfRuns, array_size, aveResult);
+        numberOfRuns, n, aveResult);
 
     return 0;
 }
