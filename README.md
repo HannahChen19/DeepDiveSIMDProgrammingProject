@@ -15,20 +15,24 @@ Name: Chen, Hannah L. / G01
 
 ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/2f1f0e43-c98c-4702-a349-89cd1cc02b80)
 
+**LINK TO COLAB CUDA PROGRAM:** https://colab.research.google.com/drive/1V-BPCtgHmwzt7vNL3rOqbQ8g47iHu2xQ?usp=sharing
 
-**I. Comparative Time Analysis of the Kernels (C, x86-64, SIMD YMM register, CUDA)**
 
-  **Table showing the average execution time (30 runs) of different kernels under different vector sizes (in Microseconds):**
+**I. Comparative Execution Time and the Analysis of the Performance of Kernels (C, x86-64, SIMD YMM register, CUDA)**
+
+  **a.) Table showing the average execution time (30 runs) of different kernels under different vector sizes (in Microseconds):**
   
+
+
+  **b.) Analysis of Performance**
   
-  
-  a.) How many times faster?
+      a.) How many times faster?
 
   
-  b.) Why is it faster?
+      b.) Why is it faster?
 
   
-  c.) Overheads (for CUDA)
+      c.) Overheads (for CUDA)
 
   
   
@@ -112,25 +116,30 @@ Name: Chen, Hannah L. / G01
 
   **a.) n = 2^20**
   
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/b179103e-afd0-4c1b-8a7f-31c2adaef8ce)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/4b6e9e63-c818-42c0-82a6-70972d3d88ec)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/464164ce-e822-4282-82f4-666a288441c5)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/c04a4f71-562e-4f22-9949-dd1f2adc73ba)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/f4803bdc-28e7-4f3d-aa06-638260faaaf9)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/a5d6e0a3-f13f-4291-9181-8e1ab88d0ff5)
-
-
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/397943f9-ec78-46eb-907d-4ae8565ccc4b)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/80d7ac19-bb43-43f4-9497-ce68d5db9dc1)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/8a98202e-b1bb-46f6-887c-a1d39cf61cc3)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/285a4a8f-e9aa-441b-b6da-270f87036376)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/79fa9c18-ebc8-4061-a26b-0c963b545901)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/d407194c-ef25-43b1-b724-0a47803e35a6)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/b21e3b43-5e71-422e-8d2b-8844c8eece43)
+  
   **b.) n = 2^24**
   
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/0dda477c-abc4-4f61-9a89-9ec920c3f588)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/c05022c6-95d2-4684-a39b-bfe80acb9a85)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/f48575ac-a543-4809-84bb-a77705464f55)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/728440f5-0b58-4cd6-b2ba-f785a06ae87e)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/3858ac99-d46e-4db6-a87d-8e5283070d34)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/bc0fe3ed-e7f1-47de-906b-888008d49417)
-
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/1ce3fcc5-d94e-4976-8bbc-adee17dd0e6d)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/24e460cc-01c2-4e31-97e6-02f8418dd8f2)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/3b35eb12-4541-4cb1-8072-87134310758c)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/4af855ff-c8c0-4812-a122-522715eb8f6f)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/501ff40a-7b7c-424b-bd14-e1a663ad3e68)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/5b636888-b74c-4cc4-b2e7-592cab3fb4db)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/9649dff3-e334-490e-bf89-668e6afdd5cb)
 
   **c.) n = 2^26** (Up to 2^26 for it to be the same as the other kernels - for more accurate comparative analysis)
 
-  
-  
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/c6bdc8aa-03c4-4761-bbc6-0baba11f17b8)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/ac917699-fd1d-4e70-bc3f-83af0d7eb41b)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/7b52df85-9df3-4d74-8870-4a76c3871bd3)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/ebc014b2-f334-4bf9-94ef-54c47a072010)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/9c7e09bd-7dfe-44fc-a731-39534e17bbe6)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/1f7e12aa-5f52-4630-b58d-b85e6ac61587)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/03ac6db7-0161-44e7-aed6-80a8376b2dc9)
