@@ -32,7 +32,9 @@ Name: Chen, Hannah L. / G01
   c.) n = 2^26 _(Device cannot handle upto 2^28 or 2^30)_
   
 **V. Screenshot of the program output including correctness check (CUDA)**
+
   **a.) n = 2^20**__
+  
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/b179103e-afd0-4c1b-8a7f-31c2adaef8ce)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/4b6e9e63-c818-42c0-82a6-70972d3d88ec)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/464164ce-e822-4282-82f4-666a288441c5)
