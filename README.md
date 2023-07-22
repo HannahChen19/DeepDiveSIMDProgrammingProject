@@ -22,7 +22,9 @@ Name: Chen, Hannah L. / G01
 
   **a.) Table showing the average execution time (30 runs) of different kernels under different vector sizes (in Microseconds):**
   
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/8cb084b3-a395-4d7f-bd83-f79c8d197f7b)
 
+  The above table shows the execution time of each kernel. For the CUDA kernel, data transfer time and page fault results were also included. All of the required kernels (C, x86-64, SIMD YMM register, and CUDA) were run 30 times under vector sizes 2^20, 2^24, and 2^26, and the average execution times were recorded. The highest vector size run is until 2^26 only due to device limitations. As shown in the table, the kernel with the fastest execution time is the SIMD YMM register kernel, followed by the C kernel, then the x86-64 kernel, with the CUDA kernel having the longest execution time. 
 
   **b.) Analysis of Performance**
   
