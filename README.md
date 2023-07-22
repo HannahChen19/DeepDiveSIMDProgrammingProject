@@ -43,6 +43,7 @@ Name: Chen, Hannah L. / G01
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/a5d6e0a3-f13f-4291-9181-8e1ab88d0ff5)
 
   **b.) n = 2^24**
+  
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/0dda477c-abc4-4f61-9a89-9ec920c3f588)
 
 
