@@ -42,8 +42,12 @@ Name: Chen, Hannah L. / G01
 
 ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/338d2f98-2c8f-4859-b937-73fd8b1938a3)
 
-The above image shows the rate of increase in the execution time of the different kernels. Based on the table, it can be seen that 
+  The above image shows the increase in the execution time of the different kernels. Based on the table, it can be seen that the greatest execution time increase is from the C to CUDA kernel, where C kernel is able to execute approximately 17 times faster for vector sizes of 2^20 and 2^24, and approximately 19 times faster for vector size 2^26 compare to that of the CUDA kernel. This is because the CUDA kernel is running in the Google colaboratory platform which uses shared GPU, resulting to limited memory and more overheads for data transfer, making it to take longer to complete the execution process.
 
+  The second set of kernel with the greatest changes in execution time is the CUDA kernel and SIMD YMM register kernel. As seen in the image above, the SIMD YMM register kernel was able to run approximately 13 times faster in vector size of 2^20, and approximately 20 times faster in vector size of 2^24 and 2^26 compared to CUDA kernel. This is because SIMD YMM register kernel is capable of allowing the processor to process multiple elements at the same time, making it to complete the tasks faster.
+
+  
+  
       a.) How many times faster?
 
   
