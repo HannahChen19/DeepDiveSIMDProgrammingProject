@@ -46,19 +46,19 @@ Name: Chen, Hannah L. / G01
 
   The second set of kernel with the greatest changes in execution time is the CUDA kernel and SIMD YMM register kernel. As seen in the image above, the SIMD YMM register kernel was able to run approximately 13 times faster in vector size of 2^20, and approximately 20 times faster in vector size of 2^24 and 2^26 compared to CUDA kernel. This is because SIMD YMM register kernel is capable of allowing the processor to process multiple elements at the same time, making it to complete the tasks faster.
 
-  
-  
-      a.) How many times faster?
+  Analysis of the other sets of kernel performances are as follows:
 
-  
-      b.) Why is it faster?
+  For C and x86-64 kernel, C was able to run approximately 3 times faster for vector size of 2^20 and 1 time faster for the vector sizes of 2^24 and 2^26 compared to the x86-64 kernel, which is an interesting finding as I was expecting x86-64 to run faster than the C kernel. The reason behind this may be due to the complexity of the x86-64 assembly code which leads to more overhead time compared to the C kernel. 
 
-  
-      c.) Overheads (for CUDA)
+  For the C and SIMD YMM register kernel, the C kernel was able to run approximately 1 time faster than the SIMD YMM register kernel for vector size of 2^20. However, for vector sizes of 2^24 and 2^26, the SIMD YMM register kernel was able to run approximately 0.87 to 0.93 times faster than the C kernel. This is because when the vector size is still small, the capability of SIMD YMM register to process multiple data elements at the same time is still not that beneficial and the overhead of the kernel still outweights it's benefit, making it slower than the C kernel.
 
-  **c.) Analysis of CUDA vis-a-vis x86 SIMD**
+  For the x86-64 and SIMD YMM register kernel, the SIMD YMM register kernel runs at an approximate of 0.35 to 0.47 times faster than the x86-64 kernel due to its capability of processing multiple elements at the same time which can help in improving the execution time.
 
-  
+  For the x86-64 and CUDA kernel, the x86-64 kernel was able to run at an approximate of 4 times faster for vector size 2^20, and approximately 9 times faster for vector sizes 2^24 and 2^26. The reason for this is because the CUDA kernel is being run at the Google colab platform, which uses shared GPU and has limited memory, making it to have more overheads and resulting to a longer execution time.
+
+![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/57f55f81-addb-4ff5-b8d4-3a6fce846d60)
+
+  The above image shows the overheads and page fault results of the CUDA kernel. After applying the best CUDA implementation practices (grid-stride loop, memory prefetching, memory advice), the kernel was able to achieve the data transfer time shown in the above image, with the transferring of data from device to host to be faster than from host to device. The reason for this may be because from host to device, the operation is more bandwidth limited as the GPU's memory is often faster than the CPU's memory. Another reason is because when transferring from host to device, the operation is often more complex as it requires the host to first copy the data into the GPU's memory, and the GPU also needs to allocate space for the data. For this project, no page faults were present for both CPU and GPU.
     
 **II. Screenshot of the program output with correctness check (C)**
 
