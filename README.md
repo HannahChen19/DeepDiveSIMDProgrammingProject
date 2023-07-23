@@ -70,6 +70,8 @@ Name: Chen, Hannah L. / G01
 
 ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/57f55f81-addb-4ff5-b8d4-3a6fce846d60)
 
+**CUDA Overheads and Pagefaults**
+  
   The above image shows the overheads and page fault results of the CUDA kernel. After applying the best CUDA implementation practices (grid-stride loop, memory prefetching, memory advice), the kernel was able to achieve the data transfer time shown in the above image, with the transferring of data from device to host to be faster than from host to device. The reason for this is because from host to device, the operation is more bandwidth limited as the GPU's memory is often faster than the CPU's memory. Another reason is because when transferring data from host to device, the operation is often more complex as it requires the host to first copy the data into the GPU's memory, and the GPU also needs to allocate space for the data. For this project, no page faults were present for both CPU and GPU.
     
 **II. Screenshots of the program outputs with correctness check (C)**
