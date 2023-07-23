@@ -5,11 +5,11 @@ For Deep Dive: SIMD programming project (CSC612M)
 Name: Chen, Hannah L. / G01 
 
 
-**ALL KERNELS ARE CHECKED WITH THE C VERSION ANSWER (EXPECTED SDOT FOR CUDA PROGRAM IS CODED IN C)**
+**ALL KERNELS ARE CHECKED WITH THE C VERSION ANSWER (EXPECTED SDOT FOR CUDA PROGRAM IS CODED IN C ALSO)**
 
 **ALL KERNELS RUN UP TO A VECTOR SIZE OF 2^26 ONLY DUE TO DEVICE LIMITATIONS (CUDA ALSO RUNS UP TO 2^26 VECTOR SIZE ONLY FOR THE PURPOSE OF MORE ACCURATE COMPARATIVE ANALYSIS WITH THE OTHER KERNELS)**
 
-**C, x86-64, and SIMD YMM register are all run in 'x64 Release' in Visual Studio 2022**
+**C, x86-64, and SIMD YMM register kernels are all run in 'x64 Release' configuration in Visual Studio 2022**
 
 **Sample .asm file command line setup information:**
 
@@ -32,7 +32,7 @@ Name: Chen, Hannah L. / G01
 
   Despite having proper application of memory prefetching, usage of grid-stride loop and memory advise, CUDA in Google Colaboratory platform still has the longest execution time among the four kernels. Possible reasons for this may be because it is compiled and launched in GPU, which can lead to more overheads in execution time, and also because Google Colab is using a shared GPU, which can lead to longer execution time. Another reason for this may also be due to GPUs having more limited memory compared to CPU, which requires more data transfers and thereby resulting to longer execution times.
 
-  **b.) Analysis of Performance**
+  **b.) Analysis of Performance (including Analysis of CUDA vis-a-vis x86 SMID)**
 
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/7add8fb5-1dff-4a05-8daf-7e65e732d7f6)
 
