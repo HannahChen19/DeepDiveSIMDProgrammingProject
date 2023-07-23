@@ -20,13 +20,24 @@ Name: Chen, Hannah L. / G01
 
 **I. Comparative Execution Time and the Analysis of the Performance of Kernels (C, x86-64, SIMD YMM register, CUDA)**
 
-  **a.) Table showing the average execution time (30 runs) of different kernels under different vector sizes (in Microseconds):**
+  **a.) Comparison of the average execution time (30 runs) of different kernels under different vector sizes (in Microseconds):**
   
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/8cb084b3-a395-4d7f-bd83-f79c8d197f7b)
 
-  The above table shows the execution time of each kernel. For the CUDA kernel, data transfer time and page fault results were also included. All of the required kernels (C, x86-64, SIMD YMM register, and CUDA) were run 30 times under vector sizes 2^20, 2^24, and 2^26, and the average execution times were recorded. The highest vector size run is until 2^26 only due to device limitations. As shown in the table, the kernel with the fastest execution time is the SIMD YMM register kernel, followed by the C kernel, then the x86-64 kernel, with the CUDA kernel having the longest execution time. 
+  The above table shows the execution time of each kernel in microseconds. For the CUDA kernel, data transfer time and page fault results were also included. All of the required kernels (C, x86-64, SIMD YMM register, and CUDA) were run 30 times under vector sizes 2^20, 2^24, and 2^26, and the average execution times were recorded. The highest vector size run is until 2^26 only due to device limitations. As shown in the table, the kernel with the fastest execution time is the SIMD YMM register kernel, followed by the C kernel, then the x86-64 kernel, with the CUDA kernel having the longest execution time. 
+
+  Based on the execution times recorded in the table, it can be seen that in vector size 2^20, the C kernel was able to execute the fastest among all the available kernels. However, as the vector size increases, SIMD YMM register kernel starts to execute faster than all other kernels. This is because SIMD YMM register kernel allows performing of multiple data elements in parallel, making it more efficient when processing large vector sizes. Another reason may be due to the fact that all kernels have some overheads in it and when the vector size is small (2^20), the overheads of the other kernels (x86-64, SIMD YMM register) may be significant compared to its actual execution time, thereby outweighting its benefit. Because of that, in the case of the project, at smaller vector sizes, a C kernel becomes more efficient. 
+
+  It can also be seen from the table that the x86-64 kernel is having longer execution time compared to the C kernel, which is actually a new finding for me as I was initially expecting the x86-64 kernel to run faster than the C kernel. Possible reasons for this will be due to the complexity of the x86-64 assembly code, which may lead to increased instruction count and overhead compared to the higher-level abstractions provided by C. Another reason may be due to the large vector size that exceed the CPU's cache capacity, thereby leading to more frequent cache misses for the x86-64 kernel, causing a longer execution time. 
+
+  Despite having proper application of memory prefetching, usage of grid-stride loop and memory advise, CUDA in Google Colaboratory platform still has the longest execution time among the four kernels. Possible reasons for this may be because it is compiled and launched in GPU, which can lead to more overheads in execution time, and also because Google Colab is using a shared GPU, which can lead to longer execution time. Another reason for this may also be due to GPUs having more limited memory compared to CPU, which requires more data transfers and thereby resulting to longer execution times.
 
   **b.) Analysis of Performance**
+
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/7add8fb5-1dff-4a05-8daf-7e65e732d7f6)
+
+  The above image shows the computed rate of increase for the different kernels under different vector sizes. 
+
   
       a.) How many times faster?
 
@@ -36,8 +47,10 @@ Name: Chen, Hannah L. / G01
   
       c.) Overheads (for CUDA)
 
+  **c.) Analysis of CUDA vis-a-vis x86 SIMD**
+
   
-  
+    
 **II. Screenshot of the program output with correctness check (C)**
 
   **a.) n = 2^20**
