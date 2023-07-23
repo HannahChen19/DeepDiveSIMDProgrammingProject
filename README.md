@@ -36,9 +36,14 @@ Name: Chen, Hannah L. / G01
 
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/7add8fb5-1dff-4a05-8daf-7e65e732d7f6)
 
-  The above image shows the computed rate of increase for the different kernels under different vector sizes. 
+  The above image shows the computed rate of increase for the different kernels under different vector sizes. As seen from the image, C and CUDA kernels have the greatest rate of increase in execution time from vector size 2^20 to 2^24, which is around 13 times of increase in execution time. x86-64 kernel increased by 6 times, and SIMD YMM register kernel increased by approximately 8 times of the execution time. On the other hand, for the vector size from 2^24 to 2^26, the increase is approximately 3 times of the execution time for all kernels. 
 
-  
+  For smaller vector sizes, C and CUDA have more significant execution time improvements because when vector sizes are small, vectorizations for x86-64 kernels and SIMD YMM register kernels may not have significant impacts yet, leading to higher overheads and less significant performance improvements. Another reason why the C and CUDA kernels increased larger compared to the other two kernels for smaller vector sizes is because they are more sensitive to the cache size. For small vector sizes, when using C and CUDA kernels, the entire vector can fit in the cache and data can be access more quickly, resulting to faster execution time. On the other hand, for larger vector sizes, the cache size is not as much of a factor because the entire vector will not fit in the cache regardless of the size of the vector. This is why the rate of increase in the execution time for all of the kernels will be similar when vector size are large.
+
+![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/338d2f98-2c8f-4859-b937-73fd8b1938a3)
+
+The above image shows the rate of increase in the execution time of the different kernels. Based on the table, it can be seen that 
+
       a.) How many times faster?
 
   
