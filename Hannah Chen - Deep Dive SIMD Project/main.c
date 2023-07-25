@@ -215,7 +215,7 @@ double bulkRunSIMDYMM(unsigned int vector_size) {
 int main() {
     /********* CHANGE NUMBER OF RUNS AND VECTOR SIZE HERE IF NEEDED ********/
     int numberOfRuns = 30;
-    unsigned int n = 1 << 20;
+    unsigned int n = 1 << 26;
     /***********************************************************************/
 
     double* timeResults = (double*)malloc(numberOfRuns * sizeof(double));
