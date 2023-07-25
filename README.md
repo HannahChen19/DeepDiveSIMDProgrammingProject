@@ -24,7 +24,7 @@ Name: Chen, Hannah L. / G01
 
   **a.) Comparison of the average execution time (30 runs) of different kernels under different vector sizes (in Microseconds):**
   
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/8cb084b3-a395-4d7f-bd83-f79c8d197f7b)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/230c1354-2707-4be4-83b0-a4a2dc376000)
 
   The above table shows the execution time of each kernel in microseconds. For the CUDA kernel, data transfer time and page fault results were also included. All of the required kernels (C, x86-64, SIMD YMM register, and CUDA) were run 30 times under vector sizes 2^20, 2^24, and 2^26, and the average execution times were recorded. The highest vector size run is until 2^26 only due to device limitations. As shown in the table, the kernel with the fastest execution time is the SIMD YMM register kernel, followed by the C kernel, then the x86-64 kernel, with the CUDA kernel having the longest execution time. 
 
@@ -36,13 +36,13 @@ Name: Chen, Hannah L. / G01
 
   **b.) Analysis of Performance (including Analysis of CUDA vis-a-vis x86 SMID)**
 
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/7add8fb5-1dff-4a05-8daf-7e65e732d7f6)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/cf7bb2f1-a471-418c-a02f-fb6b2de692bb)
 
   The above image shows the computed rate of increase for the different kernels under different vector sizes. As seen from the image, C and CUDA kernels have the greatest rate of increase in execution time from vector size 2^20 to 2^24, which is around 13 times of increase in execution time. Under the same vector size, x86-64 kernel increased by 6 times, and SIMD YMM register kernel increased by approximately 8 times of the execution time. On the other hand, for the vector size from 2^24 to 2^26, the increase is approximately 3 times of the execution time for all kernels. 
 
   For smaller vector sizes, C and CUDA have more significant execution time increases because when vector sizes are small, vectorizations for x86-64 kernels and SIMD YMM register kernels may not have significant impacts yet, leading to lesser overhead changes and less significant performance impacts as vector size changes. The C and CUDA kernels' execution time increased larger compared to the other two kernels for smaller vector sizes because they are more sensitive to the cache size. For small vector sizes, when using C and CUDA kernels, the entire vector can fit in the cache and data can be access more quickly, resulting to faster execution time. However, as the vector size increases to 2^24, the execution time will be significantly increased as not all vectors can now fit in the cache and it will require more time to access the data. As the vector size continues to increase and becomes even larger, the cache size is not as much of a factor anymore because the entire vector will now not fit in the cache regardless of the size of the vector. This is why the rate of increase in the execution time from vector size 2^24 to 2^26 are almost the same for all of the kernels.
 
-![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/338d2f98-2c8f-4859-b937-73fd8b1938a3)
+![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/7b4969b6-4da4-427d-a90a-74cc6c630596)
 
   The above image shows the rate of changes in the execution time of the different kernels. Analysis and comparison of the kernels' performances are as follows:
 
@@ -70,7 +70,7 @@ Name: Chen, Hannah L. / G01
 
   For the x86-64 and CUDA kernel, the x86-64 kernel was able to run at an approximate of 4 times faster for vector size 2^20, and approximately 9 times faster for vector sizes 2^24 and 2^26. The reason for this is because the CUDA kernel is being run at the Google colab platform, which uses shared GPU and has limited memory, making it to have more overheads and resulting to a longer execution time.
 
-![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/57f55f81-addb-4ff5-b8d4-3a6fce846d60)
+![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/483e6ad7-881d-4ea1-a212-bf1b3c4d5492)
 
 **CUDA Overheads and Pagefaults**
   
