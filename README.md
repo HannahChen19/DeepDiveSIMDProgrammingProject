@@ -13,6 +13,8 @@ Name: Chen, Hannah L. / G01
 
 **Sample .asm file command line setup information:**
 
+**NOTE: For the running of SIMD YMM register kernel, if on the first run, the result shows wrong, just ctrl + save the asmfunc1.asm file (without changing anything in it), then rerun. (This is happening in my laptop, but works correctly upon resaving without having to change anything in the code)**
+
 ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/2f1f0e43-c98c-4702-a349-89cd1cc02b80)
 
 **LINK TO COLAB CUDA PROGRAM:** https://colab.research.google.com/drive/1V-BPCtgHmwzt7vNL3rOqbQ8g47iHu2xQ?usp=sharing
@@ -81,7 +83,7 @@ Name: Chen, Hannah L. / G01
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/92fb0751-cc31-42bd-ba18-10d64eac4052)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/19a623de-a595-41bc-866a-8a49bcd9aa46)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/1e4197b9-fb04-499c-9495-c3e65d6a6664)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/f6116ee8-b4dc-4b78-b537-a20c36034258)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/b2b1c13c-a406-4003-93d8-8d5a82915272)
   
   **b.) n = 2^24**
   
@@ -89,14 +91,14 @@ Name: Chen, Hannah L. / G01
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/b25e5bbd-bbb1-498a-b2b3-b27974ac9f39)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/c607c7f1-a646-4584-a1a0-d741719dbc04)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/7e61765c-05bf-4708-8140-e0c7e177b583)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/2550ba8f-df92-4c16-91fb-41f640eb572a)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/f719f9c5-eab7-465b-8fa3-2286d4090567)
   
   **c.) n = 2^26 (Device cannot handle upto 2^28 or 2^30)**
 
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/adbf7731-4098-44a8-b280-06ca82b67c3e)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/e5deca36-a1fe-48a0-9193-a8a8d63a983a)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/578f8ca7-054f-482f-a36d-a195a2d66bb6)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/c5fe711b-b452-4d5b-851d-0ae209d0206a)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/83961766-160c-4f41-a899-a53bab854069)
   
 **III. Screenshot of the program output including correctness check (x86-64)**
 
@@ -106,7 +108,7 @@ Name: Chen, Hannah L. / G01
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/bd9acd63-6f1e-46dd-a8f3-4ec7ad03001d)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/a8244592-abe5-4ffe-b99d-b56e928498a6)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/6ed7cce6-08d1-4d4c-a495-a6d55eb9f4ba)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/1295b5dc-2bc0-4bdd-9303-76876ec49335)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/6a982931-cd16-49a9-9b30-8e61f27b09db)
   
   **b.) n = 2^24**
 
@@ -114,7 +116,7 @@ Name: Chen, Hannah L. / G01
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/7b44f49b-4a23-45cf-91fa-02202363dc35)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/d16b9b25-3601-4415-8477-e9e7d724e0fd)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/032b6d24-9402-44df-8d66-fcd676d5385b)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/1c955339-d77b-4238-b23d-a456060fa388)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/ca649f6d-5afd-40b7-9737-47c854db1a99)
   
   **c.) n = 2^26 (Device cannot handle upto 2^28 or 2^30)**
 
@@ -122,7 +124,7 @@ Name: Chen, Hannah L. / G01
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/bb113423-2c43-46e2-993c-2ae16059949a)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/a4a92d50-5a3f-4df7-8253-6e27d78b035d)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/60c2d638-05d6-4884-9d37-a2bf4e3130f4)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/f15903ef-3894-4d04-b5a8-44f62896c7b3)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/9b219f7c-fbc2-414d-8ebe-86f8f3c47a13)
       
 **IV. Screenshot of the program output including correctness check (SIMD YMM register)**
 
@@ -132,7 +134,7 @@ Name: Chen, Hannah L. / G01
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/65888565-2f84-47a3-934e-30ce39003a2c)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/6096088d-5e78-432b-88a8-423a4bbc1122)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/e5572922-1700-4e3e-92b0-afa3c515bb65)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/d4b57c95-c72e-42ee-ada7-492a6c10cd7b)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/82fa6e0c-36c1-40da-84e5-373f2a595d29)
   
   **b.) n = 2^24**
 
@@ -140,7 +142,7 @@ Name: Chen, Hannah L. / G01
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/6a842e17-da86-4f33-b603-7b90097ec396)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/ae6e398c-689e-4660-8fac-eff5eaf187d0)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/f688f2d7-95c5-4354-a5bc-cd445350be77)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/7cff159e-bd08-4791-aeb8-578fd60f3942)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/a1b93213-352b-4097-8218-be9ebd6ec860)
   
   **c.) n = 2^26 (Device cannot handle upto 2^28 or 2^30)**
 
@@ -148,7 +150,7 @@ Name: Chen, Hannah L. / G01
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/ab771320-a5c5-4210-9f0a-27565a69af72)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/068ab4e6-c6ad-44c4-a065-a20236b4cc7a)
   ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/395f133c-e693-4ff5-b549-e27d217a69fe)
-  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/27e22c71-6d57-4ff6-9651-31b68cc8ff3e)
+  ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/9c052353-73c4-4589-9ebe-c64acf9c635e)
     
 **V. Screenshot of the program output including correctness check (CUDA)**
 
