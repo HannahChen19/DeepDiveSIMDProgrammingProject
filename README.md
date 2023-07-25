@@ -13,7 +13,7 @@ Name: Chen, Hannah L. / G01
 
 **Sample .asm file command line setup information:**
 
-**NOTE: For the running of SIMD YMM register kernel, if on the first run, the result shows wrong, just ctrl + save the asmfunc1.asm file (without changing anything in it), then rerun. (This is happening in my laptop, but works correctly upon resaving without having to change anything in the code)**
+**NOTE: For the running of SIMD YMM register kernel, if on the first run, the result shows wrong, just ctrl + save the asmfunc1.asm file (without changing anything in it), then rerun. (This happened once on my laptop, but works correctly upon resaving without having to change anything in any of the codes)**
 
 ![image](https://github.com/HannahChen19/DeepDiveSIMDProgrammingProject/assets/132733094/2f1f0e43-c98c-4702-a349-89cd1cc02b80)
 
